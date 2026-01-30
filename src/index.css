@@ -1,0 +1,598 @@
+@font-face {
+  font-family: "ArcadeI";
+  src: url("/fonts/ARCADE_I.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-arcade {
+  font-family: "ArcadeI", sans-serif;
+  letter-spacing: 0.08em;
+}
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black-gradient: linear-gradient(
+    144.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+  --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+.text-gradient {
+  background: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    #a31c1c 0%,   
+    #ff2a2a 35%,   
+    #2f5bff 70%,   
+    #8fa8ff 100%    
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+.text-gradient-linear {
+  background: linear-gradient(
+    90deg,
+    #ff4d4d 0%,   
+    #ff2a2a 35%,   
+    #2f5bff 70%,    
+    #8fa8ff 100%    
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+
+
+.bg-blue-gradient {
+  background: linear-gradient(
+    157.81deg,
+    #def9fa -43.27%,
+    #bef3f5 -21.24%,
+    #9dedf0 12.19%,
+    #7de7eb 29.82%,
+    #5ce1e6 51.94%,
+    #33bbcf 90.29%
+  );
+}
+
+.bg-black-gradient {
+  background: linear-gradient(
+    144.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+}
+
+.bg-black-gradient-2 {
+  background: linear-gradient(
+    -168.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+}
+
+.bg-gray-gradient {
+  background: linear-gradient(
+    153.47deg,
+    rgba(255, 255, 255, 0) -341.94%,
+    #14101d 95.11%
+  );
+}
+
+.bg-discount-gradient {
+  background: linear-gradient(125.17deg, #272727 0%, #11101d 100%);
+}
+
+.box-shadow {
+  box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+}
+
+.sidebar {
+  -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.feature-card:hover {
+  background: var(--black-gradient);
+  box-shadow: var(--card-shadow);
+}
+
+.feedback-container .feedback-card:last-child {
+  margin-right: 0px;
+}
+
+.feedback-card {
+  background: transparent;
+}
+
+.feedback-card:hover {
+  background: var(--black-gradient);
+}
+
+.blue__gradient {
+  background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #214d76 100%);
+  filter: blur(123px);
+}
+
+.pink__gradient {
+  background: linear-gradient(90deg, #f4c4f3 0%, #fc67fa 100%);
+  filter: blur(900px);
+}
+
+.white__gradient {
+  background: rgba(255, 255, 255, 0.6);
+  filter: blur(750px);
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.delay-1000 {
+  animation-delay: 1s;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Section Transitions */
+.section-transition {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover Effects for Cards */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Parallax Container */
+.parallax-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Floating Animation for Icons/Elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Gradient Animation */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
+
+/* Slide In From Left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 1s ease-out forwards;
+  opacity: 0;
+}
+
+/* Slide In From Right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 1s ease-out forwards;
+  opacity: 0;
+}
+
+/* Scale In Animation */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* Reveal Animation for Text */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.animate-reveal {
+  animation: reveal 1.2s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  opacity: 0;
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s infinite;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 1000px 100%;
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+
+/* Blur Fade In */
+@keyframes blurFadeIn {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.animate-blur-fade-in {
+  animation: blurFadeIn 1s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes swing {
+  0%, 100% {
+    transform: translateX(-50%) rotate(-8deg) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) rotate(8deg) translateY(6px);
+  }
+}
+
+.animate-swing {
+  animation: swing 3s ease-in-out infinite;
+  transform-origin: center top;
+}
+
+
+.phishing-card-wrapper {
+  position: relative;
+  max-width: 900px;
+
+  padding-top: 30px; 
+  overflow: visible; 
+}
+
+.phishing-card {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  min-height: 300px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 4, 15, 0.95) 0%,
+    rgba(17, 16, 29, 0.95) 100%
+  );
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; 
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  box-shadow: 0 10px 40px rgba(0, 246, 255, 0.18);
+}
+
+.phishing-card__description{
+  padding: 1rem;
+}
+
+.phishing-card:hover {
+  transform: rotate(-2deg) scale(1.04);
+  box-shadow: 0 14px 40px rgba(0, 246, 255, 0.28);
+}
+
+
+.hook-pull {
+  position: absolute;
+  left: 50%;
+  bottom: -60px;             
+  transform: translateX(-50%);
+  width: 64px;
+  height: 64px;
+  z-index: 50;
+
+  transition: bottom 2.2s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.hook-pull--animated {
+  bottom: calc(100% - 50px);
+}
+
+/* =========================
+   CONTENT (INSIDE CARD)
+========================= */
+.phishing-card__content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(100%); 
+  width: 100%;
+  height: 100%;
+padding: 34px 42px;
+  box-sizing: border-box;
+  background: transparent;
+  opacity: 0;
+
+  transition: transform 2.5s cubic-bezier(0.23, 1, 0.320, 1),
+              opacity 0.8s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.phishing-card--animated .phishing-card__content {
+  transform: translateY(0); /* slides up */
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+
+.phishing-card__title {
+  margin: 0 0 15px 0;
+  font-size: 32px;
+  color: #00f6ff;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+}
+
+.phishing-card__description {
+  margin: 0;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+  font-family: "Poppins", sans-serif;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media screen and (max-width: 768px) {
+  .phishing-card-wrapper {
+    padding-top: 40px;
+  }
+
+.phishing-card {
+  max-width: 820px;  
+  min-height: 280px;  
+}
+
+  .phishing-card__content {
+    padding: 20px 22px;   
+  }
+
+  .phishing-card__title {
+    font-size: 22px;
+  }
+
+  .phishing-card__description {
+    font-size: 13.5px;
+    line-height: 1.6;
+  }
+}
+
+/* =========================
+   LAPTOP (1024px–1280px)
+========================= */
+@media screen and (max-width: 1200px) {
+  .phishing-card {
+    max-width: 720px;
+    min-height: 260px;
+  }
+
+  .phishing-card__content {
+    padding: 28px 34px;
+  }
+}
+
+
+
+@media screen and (max-width: 640px) {
+  .phishing-card {
+    min-height: auto;      
+    height: auto;
+  }
+
+  .phishing-card__content {
+    position: relative;  
+    transform: translateY(0);
+    opacity: 1;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .phishing-card-wrapper {
+    padding-top: 40px;
+  }
+
+.hook-pull {
+  bottom: 55px;  
+  width: 48px;
+  height: 48px;
+}
+
+.hook-pull--animated {
+  bottom: calc(100% - 30px);
+}
+
+}
+
+
+
+
+.scroll-section {
+  scroll-margin-top: 200px;
+}
+.scroll-section1 {
+  scroll-margin-top: 100px;
+}
+.scroll-section2 {
+  scroll-margin-top: 130px;
+}
+
+.scroll-section3 {
+    scroll-margin-top: 110px;
+
+}
