@@ -120,7 +120,7 @@ const PastEvents = () => (
   text-2xl
   sm:text-3xl
   md:text-4xl
-  lg:text-5xl
+  lg:text-4xl
 ">
   Past Events
 </h2>

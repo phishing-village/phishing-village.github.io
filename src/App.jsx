@@ -61,35 +61,21 @@ const App = () => {
       </div>
 
       {/* ===== Navbar ===== */}
-      <div
-        className="fixed w-full z-50 flex justify-center transition-all duration-300"
-        style={{
-          backgroundColor: scrollY > 50 ? "rgba(0,0,0,0.8)" : "transparent",
-          backdropFilter: scrollY > 50 ? "blur(10px)" : "none",
-          boxShadow:
-            scrollY > 50 ? "0 4px 30px rgba(0,0,0,0.1)" : "none",
-        }}
-      >
-        <div className={styles.boxWidth}>
-          <Navbar />
-        </div>
-      </div>
+      <Navbar scrollY={scrollY} />
+
 
       {/* ===== Hero Section ===== */}
       <div
-        className={`bg-primary ${styles.flexStart} relative min-h-screen pt-20`}
+        className={`bg-primary ${styles.flexStart} relative  pt-20`}
       >
-        <div className={`${styles.boxWidth} relative z-10`}>
-          <Hero scrollY={scrollY} />
-        </div>
+        <Hero scrollY={scrollY} />
       </div>
 
       {/* ===== Main Content ===== */}
-      <div
-        className={`bg-primary ${styles.paddingX} ${styles.flexCenter} relative z-10`}
-      >
+      <div className="bg-primary relative z-10">
+
         <div className={styles.boxWidth}>
-          <section className="scroll-reveal mb-20">
+          <section className="scroll-reveal mb-20 pt-20">
             <Whatdowedo />
           </section>
 
@@ -103,10 +89,10 @@ const App = () => {
 
 
 
-                    <section className="scroll-reveal">
-            <ContactSection/>
+          <section className="scroll-reveal">
+            <ContactSection />
           </section>
-                    <section className="scroll-reveal">
+          <section className="scroll-reveal">
             <Footer />
           </section>
         </div>

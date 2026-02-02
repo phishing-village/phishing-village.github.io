@@ -25,14 +25,14 @@ const Hero = () => {
     <section
       ref={heroRef}
       id="home"
-      className="relative min-h-screen w-full overflow-hidden scroll-section "
+      className="relative w-full overflow-hidden "
     >
       {/* Background Image */}
-<div
+{/* <div
   className={`absolute inset-0 z-0 transition-opacity duration-1000 ${
     isVisible ? "opacity-100" : "opacity-0"
   }`}
->
+> */}
 <img
   src={PhishingVillage}
   alt="phishing"
@@ -46,7 +46,7 @@ const Hero = () => {
   "
 />
 
-</div>
+{/* </div> */}
 
       {/* Hero Title */}
 <div className="absolute top-[2vh] left-0 w-full z-10 flex justify-center px-6">

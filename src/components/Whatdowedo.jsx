@@ -91,7 +91,7 @@ const Testimonials = () => {
 
 <div className="w-full flex items-center md:flex-row flex-col gap-8 relative z-[1]">
         {/* Heading */}
-<div className="md:w-auto w-full flex justify-center md:ml-24">
+<div className="md:w-auto w-full flex justify-center">
 <h2 className="
   font-arcade
   text-[#00ff1e]
