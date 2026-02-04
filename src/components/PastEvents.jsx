@@ -1,6 +1,5 @@
 import styles, { layout } from "../style";
 import Cocon from "../assets/Cocon-Logo.png";
-import hookSvg from "../assets/fishing-hook.svg";
 import Device1 from "../assets/Device1.svg";
 import Device2 from "../assets/Device2.svg";
 import Device3 from "../assets/Device3.svg";
@@ -40,15 +39,14 @@ const EventCard = ({ title, subtitle, image, link }) => {
       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
       {/* Image */}
-<img
-  src={image}
-  alt={title}
-  className="absolute inset-0 w-full h-full object-cover z-[1]
-    transition-all duration-300
-    group-hover:blur-[2px]
-    group-hover:scale-105"
-/>
-
+      <img
+        src={image}
+        alt={title}
+        className="absolute inset-0 w-full h-full object-cover z-[1]
+          transition-all duration-300
+          group-hover:blur-[2px]
+          group-hover:scale-105"
+      />
 
       {/* Hover Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent
@@ -80,58 +78,69 @@ const EventCard = ({ title, subtitle, image, link }) => {
 };
 
 const PastEvents = () => (
-  <section id="events2" className={`${layout.section} scroll-reveal scroll-section gap-24`}>
-    {/* Left Content */}
-      <div className="absolute top-20 left-[1rem] w-32 h-32 pointer-events-none z-0 opacity-10">
-    <img src={Device1} alt="device" className="w-full h-full object-contain" />
-  </div>
+  <section
+    id="events2"
+    className={`${layout.section} scroll-reveal scroll-section gap-24`}
+  >
+    {/* Floating Background Assets */}
+    <div className="absolute top-20 left-[1rem] w-32 h-32 pointer-events-none z-0 opacity-10">
+      <img src={Device1} alt="device" />
+    </div>
 
-  <div className="absolute top-[1rem] left-[50rem] w-20 h-20 pointer-events-none z-0 opacity-10">
-    <img src={Device1} alt="device" className="w-full h-full object-contain" />
-  </div>
+    <div className="absolute top-[1rem] left-[50rem] w-20 h-20 pointer-events-none z-0 opacity-10">
+      <img src={Device1} alt="device" />
+    </div>
 
-  <div className="absolute top-[30rem] left-[40rem] w-28 h-28 pointer-events-none z-0 opacity-10">
-    <img src={Device2} alt="device" className="w-full h-full object-contain" />
-  </div>
+    <div className="absolute top-[30rem] left-[40rem] w-28 h-28 pointer-events-none z-0 opacity-10">
+      <img src={Device2} alt="device" />
+    </div>
 
-  <div className="absolute top-10 right-12 w-36 h-36 pointer-events-none z-0 opacity-10">
-    <img src={Device3} alt="device" className="w-full h-full object-contain" />
-  </div>
+    <div className="absolute top-10 right-12 w-36 h-36 pointer-events-none z-0 opacity-10">
+      <img src={Device3} alt="device" />
+    </div>
 
-  <div className="absolute top-[30rem] left-12 w-32 h-32 pointer-events-none z-0 opacity-10">
-    <img src={Device4} alt="device" className="w-full h-full object-contain" />
-  </div>
+    <div className="absolute top-[30rem] left-12 w-32 h-32 pointer-events-none z-0 opacity-10">
+      <img src={Device4} alt="device" />
+    </div>
 
-  <div className="absolute top-[80%] left-[70rem] w-32 h-32 pointer-events-none z-0 opacity-10">
-    <img src={QR} alt="qr" className="w-full h-full object-contain" />
-  </div>
+    <div className="absolute top-[80%] left-[70rem] w-32 h-32 pointer-events-none z-0 opacity-10">
+      <img src={QR} alt="qr" />
+    </div>
 
-    {/* Cards - All 3 in One Line */}
-    <div className={`${layout.sectionImg} flex flex-row gap-6 items-stretch flex-nowrap`}>
+    {/* TEXT — first on mobile, second on desktop */}
+    <div className={`${layout.sectionInfo} order-1 md:order-2`}>
+      <h2
+        className="
+          font-arcade
+          text-[#00ff1e]
+          whitespace-nowrap
+          text-2xl
+          sm:text-3xl
+          md:text-4xl
+          lg:text-4xl
+        "
+      >
+        Past Events
+      </h2>
+
+      <p className={`${styles.paragraph} max-w-[470px] mt-6`}>
+        Phishing Village has appeared at security conferences and community events,
+        showcasing modern phishing techniques and practical defense strategies.
+      </p>
+    </div>
+
+    {/* CARDS — second on mobile, first on desktop */}
+    <div
+      className={`
+        ${layout.sectionImg}
+        flex flex-row gap-6 items-stretch flex-nowrap
+        order-2 md:order-1
+      `}
+    >
       {events.map(event => (
         <EventCard key={event.id} {...event} />
       ))}
     </div>
-<div className={layout.sectionInfo}>
-<h2 className="
-  font-arcade
-  text-[#00ff1e]
-  whitespace-nowrap
-  text-2xl
-  sm:text-3xl
-  md:text-4xl
-  lg:text-4xl
-">
-  Past Events
-</h2>
-
-
-  <p className={`${styles.paragraph} max-w-[470px] mt-6`}>
-    Phishing Village has appeared at security conferences and community events,
-    showcasing modern phishing techniques and practical defense strategies.
-  </p>
-</div>
-
   </section>
 );
 

@@ -13,12 +13,18 @@ const events = [
 const EventCard = ({ title, subtitle, image }) => (
   <div className="relative w-[300px] h-[400px] bg-gradient-to-br from-[#313131] to-[#1a1a1a] rounded-[20px] flex items-center justify-center text-white overflow-hidden border border-gray-700/50 shadow-2xl">
     
-    {/* Image */}
+    {/* Blurred Image */}
     <img
       src={image}
       alt={title}
-      className="absolute w-full h-full object-cover z-[1]"
+      className="
+        absolute inset-0 w-full h-full object-cover z-[1]
+        blur-sm scale-70
+      "
     />
+
+    {/* Optional dark overlay to improve contrast */}
+    <div className="absolute inset-0 bg-black/40 z-[2]" />
 
     {/* Always-visible Overlay */}
     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent flex flex-col items-start justify-end gap-3 p-6 z-[5]">
@@ -31,12 +37,14 @@ const EventCard = ({ title, subtitle, image }) => (
       </p>
 
       <div className="flex items-center gap-2">
-        {/* <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span> */}
-        <p className="text-sm font-semibold text-green-400">Upcoming Events</p>
+        <p className="text-sm font-semibold text-green-400">
+          Upcoming Events
+        </p>
       </div>
     </div>
   </div>
 );
+
 
 
 const UpcomingEvents = () => (
